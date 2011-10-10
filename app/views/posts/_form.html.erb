@@ -12,68 +12,68 @@
   <% end %>
 
   <div class="field">
-    <%= f.label :publishdate %><br />
+    <strong>Дата записи дневника:</strong>
     <%= f.date_select :publishdate %>
   </div>
   <div class="field">
-    <%= f.label :name %><br />
+    <strong>Автор:</strong>
     <%= f.text_field :name %>
   </div>
   <div class="field">
-    <%= f.label :title %><br />
+    <strong>Заголовок(Главное за день):</strong>
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label :tasks %><br />
+    <strong>Задания на день:</strong>
     <%= f.text_area :tasks %>
   </div>
   <div class="field">
-    <%= f.label :reflection %><br />
+    <strong>Рефлексия за день:</strong>
     <%= f.text_area :reflection %>
   </div>
   <div class="field">
-    <%= f.label :ego %><br />
+    <strong>Каие проявления ЭГО заметили:</strong>
     <%= f.text_area :ego %>
   </div>
   <div class="field">
-    <%= f.label :efficiences %><br />
+    <strong>Рацпредложения:</strong>
     <%= f.text_area :efficiences %>
   </div>
   <div class="field">
-    <%= f.label :sincerityhour %><br />
-    <%= f.text_area :sincerityhour %>
-  </div>
-  <div class="field">
-    <%= f.label :negotiations %><br />
+    <strong>Количество переговоров</strong>
     <%= f.text_field :negotiations %>
   </div>
   <div class="field">
-    <%= f.label :correctnegotiations %><br />
+    <strong>Правильных переговоров</strong>
     <%= f.text_field :correctnegotiations %>
   </div>
   <div class="field">
-    <%= f.label :efficiencies %><br />
+    <strong>Подсмотренные/придуманные рацпредложения</strong>
     <%= f.text_field :efficiencies %>
   </div>
   <div class="field">
-    <%= f.label :embeddedefficiencies %><br />
+    <strong>Сколько внедрено рацпредложений ?</strong>
     <%= f.text_field :embeddedefficiencies %>
   </div>
   <div class="field">
-    <%= f.label :chronometry %><br />
+    <strong>Велся ли хронометраж ?</strong>
     <%= f.check_box :chronometry %>
   </div>
   <div class="field">
-    <%= f.label :goldhour %><br />
+    <strong>Был ли золотой час ?</strong>
     <%= f.check_box :goldhour %>
   </div>
   <div class="field">
-    <%= f.label :wakeuptime %><br />
+    <strong>Когда проснулся ?</strong>
     <%= f.time_select :wakeuptime %>
   </div>
   <div class="field">
-    <%= f.label :gosleeptime %><br />
+    <strong>Когда лег спать ?</strong>
     <%= f.time_select :gosleeptime %>
+  </div>
+  <div class="field">
+    <strong>Час искренности (заполняют другие участники)</strong>
+    <%= f.text_area :sincerityhour %>
   </div>
   <div class="actions">
     <%= f.submit %>
