@@ -1,53 +1,63 @@
-<h1>Listing posts</h1>
-
-<table>
-  <tr>
-    <th>Publishdate</th>
-    <th>Name</th>
-    <th>Title</th>
-    <th>Tasks</th>
-    <th>Reflection</th>
-    <th>Ego</th>
-    <th>Efficiences</th>
-    <th>Sincerityhour</th>
-    <th>Negotiations</th>
-    <th>Correctnegotiations</th>
-    <th>Efficiencies</th>
-    <th>Embeddedefficiencies</th>
-    <th>Chronometry</th>
-    <th>Goldhour</th>
-    <th>Wakeuptime</th>
-    <th>Gosleeptime</th>
-    <th></th>
-    <th></th>
-    <th></th>
-  </tr>
+<h1>Записи дневника соревнований</h1>
+<hr>
 
 <% @posts.each do |post| %>
+<h3 style="color: blue"><%= link_to post.title, post %></h3>
+
+<strong>Author:</strong> <span style="color:red"><%= post.name %></span>, <strong>Дата:</strong> <%= post.publishdate %>
+<br>
+
+<div class="content">
+  <h3>Задания на день</h3> 
+    <%= raw textilize(post.tasks) %>
+
+  <h3>Рефлексия</h3> 
+    <%= raw textilize(post.reflection) %>
+
+  <h3>Проявления ЭГО</h3> 
+    <%= raw textilize(post.ego) %>
+
+  <h3>Рацпредложения</h3> 
+<%= raw textilize(post.efficiences) %>
+
+</div>
+
+<div class="resulttable">
+ <table border=1>
   <tr>
-    <td><%= post.publishdate %></td>
-    <td><%= post.name %></td>
-    <td><%= post.title %></td>
-    <td><%= post.tasks %></td>
-    <td><%= post.reflection %></td>
-    <td><%= post.ego %></td>
-    <td><%= post.efficiences %></td>
-    <td><%= post.sincerityhour %></td>
+    <th>Переговоры</th>
+    <th>Правильные перегов.</th>
+    <th>Рацпредложения</th>
+    <th>Внедрен. рацпр.</th>
+    <th>Хронометраж</th>
+    <th>Золотой час</th>
+    <th>Проснулся</th>
+    <th>Лег спать</th>
+  </tr>
+
+  <tr>
     <td><%= post.negotiations %></td>
     <td><%= post.correctnegotiations %></td>
     <td><%= post.efficiencies %></td>
     <td><%= post.embeddedefficiencies %></td>
     <td><%= post.chronometry %></td>
     <td><%= post.goldhour %></td>
-    <td><%= post.wakeuptime %></td>
-    <td><%= post.gosleeptime %></td>
-    <td><%= link_to 'Show', post %></td>
-    <td><%= link_to 'Edit', edit_post_path(post) %></td>
-    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+    <td><%= "#{post.wakeuptime.hour}:#{post.wakeuptime.min}" %></td>
+    <td><%= "#{post.gosleeptime.hour}:#{post.gosleeptime.min}" %> </td>
   </tr>
+ </table>
+</div> <!--resulttable-->
+
+<h3>Час искренности</h3><%= post.sincerityhour %>
+    <div style="float:right">
+      <%= link_to 'Показать', post %>
+      <%= link_to 'Редактировать', edit_post_path(post) %>
+      <%= link_to 'Удалить', post, :confirm => 'Вы уверенны, удаляем ?', :method => :delete %>
+    </div>
+  <hr>
 <% end %>
-</table>
 
 <br />
+<%= link_to 'Добавить запись', new_post_path %> <a href="/"> Главная </a>
+<br />
 
-<%= link_to 'New Post', new_post_path %>
