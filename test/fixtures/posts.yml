@@ -1,0 +1,37 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  publishdate: 2011-10-10
+  name: MyString
+  title: MyString
+  tasks: MyText
+  reflection: MyText
+  ego: MyText
+  efficiences: MyText
+  sincerityhour: MyText
+  negotiations: 1
+  correctnegotiations: 1
+  efficiencies: 1
+  embeddedefficiencies: 1
+  chronometry: false
+  goldhour: false
+  wakeuptime: 2011-10-10 16:40:49
+  gosleeptime: 2011-10-10 16:40:49
+
+two:
+  publishdate: 2011-10-10
+  name: MyString
+  title: MyString
+  tasks: MyText
+  reflection: MyText
+  ego: MyText
+  efficiences: MyText
+  sincerityhour: MyText
+  negotiations: 1
+  correctnegotiations: 1
+  efficiencies: 1
+  embeddedefficiencies: 1
+  chronometry: false
+  goldhour: false
+  wakeuptime: 2011-10-10 16:40:49
+  gosleeptime: 2011-10-10 16:40:49

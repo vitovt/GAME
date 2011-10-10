@@ -1,0 +1,81 @@
+<%= form_for(@post) do |f| %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@post.errors.count, "error") %> prohibited this post from being saved:</h2>
+
+      <ul>
+      <% @post.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :publishdate %><br />
+    <%= f.date_select :publishdate %>
+  </div>
+  <div class="field">
+    <%= f.label :name %><br />
+    <%= f.text_field :name %>
+  </div>
+  <div class="field">
+    <%= f.label :title %><br />
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :tasks %><br />
+    <%= f.text_area :tasks %>
+  </div>
+  <div class="field">
+    <%= f.label :reflection %><br />
+    <%= f.text_area :reflection %>
+  </div>
+  <div class="field">
+    <%= f.label :ego %><br />
+    <%= f.text_area :ego %>
+  </div>
+  <div class="field">
+    <%= f.label :efficiences %><br />
+    <%= f.text_area :efficiences %>
+  </div>
+  <div class="field">
+    <%= f.label :sincerityhour %><br />
+    <%= f.text_area :sincerityhour %>
+  </div>
+  <div class="field">
+    <%= f.label :negotiations %><br />
+    <%= f.text_field :negotiations %>
+  </div>
+  <div class="field">
+    <%= f.label :correctnegotiations %><br />
+    <%= f.text_field :correctnegotiations %>
+  </div>
+  <div class="field">
+    <%= f.label :efficiencies %><br />
+    <%= f.text_field :efficiencies %>
+  </div>
+  <div class="field">
+    <%= f.label :embeddedefficiencies %><br />
+    <%= f.text_field :embeddedefficiencies %>
+  </div>
+  <div class="field">
+    <%= f.label :chronometry %><br />
+    <%= f.check_box :chronometry %>
+  </div>
+  <div class="field">
+    <%= f.label :goldhour %><br />
+    <%= f.check_box :goldhour %>
+  </div>
+  <div class="field">
+    <%= f.label :wakeuptime %><br />
+    <%= f.time_select :wakeuptime %>
+  </div>
+  <div class="field">
+    <%= f.label :gosleeptime %><br />
+    <%= f.time_select :gosleeptime %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

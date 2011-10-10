@@ -1,0 +1,53 @@
+<h1>Listing posts</h1>
+
+<table>
+  <tr>
+    <th>Publishdate</th>
+    <th>Name</th>
+    <th>Title</th>
+    <th>Tasks</th>
+    <th>Reflection</th>
+    <th>Ego</th>
+    <th>Efficiences</th>
+    <th>Sincerityhour</th>
+    <th>Negotiations</th>
+    <th>Correctnegotiations</th>
+    <th>Efficiencies</th>
+    <th>Embeddedefficiencies</th>
+    <th>Chronometry</th>
+    <th>Goldhour</th>
+    <th>Wakeuptime</th>
+    <th>Gosleeptime</th>
+    <th></th>
+    <th></th>
+    <th></th>
+  </tr>
+
+<% @posts.each do |post| %>
+  <tr>
+    <td><%= post.publishdate %></td>
+    <td><%= post.name %></td>
+    <td><%= post.title %></td>
+    <td><%= post.tasks %></td>
+    <td><%= post.reflection %></td>
+    <td><%= post.ego %></td>
+    <td><%= post.efficiences %></td>
+    <td><%= post.sincerityhour %></td>
+    <td><%= post.negotiations %></td>
+    <td><%= post.correctnegotiations %></td>
+    <td><%= post.efficiencies %></td>
+    <td><%= post.embeddedefficiencies %></td>
+    <td><%= post.chronometry %></td>
+    <td><%= post.goldhour %></td>
+    <td><%= post.wakeuptime %></td>
+    <td><%= post.gosleeptime %></td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+    <td><%= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete %></td>
+  </tr>
+<% end %>
+</table>
+
+<br />
+
+<%= link_to 'New Post', new_post_path %>
