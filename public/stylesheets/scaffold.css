@@ -12,7 +12,7 @@ pre {
   font-size: 11px;
 }
 
-a { color: #000; }
+a { color: #00f; }
 a:visited { color: #666; }
 a:hover { color: #fff; background-color:#000; }
 
@@ -54,3 +54,13 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+th, td {
+    color:green;
+    font-size:xx-small;
+    text-align:center;
+}
+
+th {
+    color:black;
+}
+
