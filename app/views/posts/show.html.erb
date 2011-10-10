@@ -1,85 +1,75 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <b>Publishdate:</b>
+  <b>Дата публикации:</b>
   <%= @post.publishdate %>
 </p>
 
 <p>
-  <b>Name:</b>
-  <%= @post.name %>
+  <b>Автор:</b>
+  <span style="color:red"><%= @post.name %></span>
 </p>
 
 <p>
-  <b>Title:</b>
+  <b>Заголовок:</b>
   <%= @post.title %>
 </p>
 
 <p>
-  <b>Tasks:</b>
+  <b>Задачи на день:</b>
   <%= raw RedCloth.new(@post.tasks).to_html %>
 </p>
 
 <p>
-  <b>Reflection:</b>
+  <b>Рефлексия:</b>
   <%= raw textilize(@post.reflection) %>
 </p>
 
 <p>
-  <b>Ego:</b>
+  <b>Проявление эго:</b>
   <%= raw textilize(@post.ego) %>
 </p>
 
 <p>
-  <b>Efficiences:</b>
+  <b>Рацпредложения:</b>
   <%= raw textilize(@post.efficiences) %>
 </p>
 
+
+
+<div class="resulttable">
+ <table border=1>
+  <tr>
+    <th>Переговоры</th>
+    <th>Правильные перегов.</th>
+    <th>Рацпредложения</th>
+    <th>Внедрен. рацпр.</th>
+    <th>Хронометраж</th>
+    <th>Золотой час</th>
+    <th>Проснулся</th>
+    <th>Лег спать</th>
+  </tr>
+
+  <tr>
+    <td><%= @post.negotiations %></td>
+    <td><%= @post.correctnegotiations %></td>
+    <td><%= @post.efficiencies %></td>
+    <td><%= @post.embeddedefficiencies %></td>
+    <td><%= @post.chronometry %></td>
+    <td><%= @post.goldhour %></td>
+    <td><%= "#{@post.wakeuptime.hour}:#{@post.wakeuptime.min}" %></td>
+    <td><%= "#{@post.gosleeptime.hour}:#{@post.gosleeptime.min}" %> </td>
+  </tr>
+ </table>
+</div> <!--resulttable-->
+
+
+<br />
+<div style="float:right">
+<%= link_to 'Редактировать', edit_post_path(@post) %> |
+<%= link_to 'Назад', posts_path %>
+</div>
 <p>
-  <b>Sincerityhour:</b>
-  <%= @post.sincerityhour %>
+  <b>Час искренности:</b>
+  <%= raw textilize(@post.sincerityhour) %>
 </p>
-
-<p>
-  <b>Negotiations:</b>
-  <%= @post.negotiations %>
-</p>
-
-<p>
-  <b>Correctnegotiations:</b>
-  <%= @post.correctnegotiations %>
-</p>
-
-<p>
-  <b>Efficiencies:</b>
-  <%= @post.efficiencies %>
-</p>
-
-<p>
-  <b>Embeddedefficiencies:</b>
-  <%= @post.embeddedefficiencies %>
-</p>
-
-<p>
-  <b>Chronometry:</b>
-  <%= @post.chronometry %>
-</p>
-
-<p>
-  <b>Goldhour:</b>
-  <%= @post.goldhour %>
-</p>
-
-<p>
-  <b>Wakeuptime:</b>
-  <%= @post.wakeuptime %>
-</p>
-
-<p>
-  <b>Gosleeptime:</b>
-  <%= @post.gosleeptime %>
-</p>
-
-
-<%= link_to 'Edit', edit_post_path(@post) %> |
-<%= link_to 'Back', posts_path %>
