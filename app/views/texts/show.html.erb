@@ -1,0 +1,9 @@
+<p id="notice"><%= notice %></p>
+
+<h2 style="color:blue"><%= @text.title %></h2>
+
+  <%= raw textilize(@text.body) %>
+
+
+<%= link_to 'Редактировать', edit_text_path(@text) %> |
+<a href="javascript='history:go -1'">Назад</a>
