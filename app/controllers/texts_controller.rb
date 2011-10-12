@@ -1,4 +1,5 @@
 class TextsController < ApplicationController
+load_and_authorize_resource
   # GET /texts
   # GET /texts.xml
   def index
