@@ -17,11 +17,14 @@
   </div>
   <div class="field">
     <strong>Автор:</strong>
+    <!--span style="color:red"> <%= current_user.email %></span-->
       <%- if @post.new_record? -%>
         <%= f.text_field :name, :value => current_user.email, :disabled => 'disabled' %> 
       <%- else %>
-        <%= f.text_field :name, :disabled => 'disabled' %>
+        <%= f.text_field :name %>
       <%- end %>
+      
+      
   </div>
   <div class="field">
     <strong>Заголовок(Главное за день):</strong>
