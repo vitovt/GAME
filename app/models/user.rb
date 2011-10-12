@@ -1,4 +1,9 @@
 class User < ActiveRecord::Base
+    # Alternatively, you can add an admin attribute flag
+  def admin?
+    ["v.vitovt@gmail.com", "hisspouse.yourservice.com"].include?(email)
+  end
+
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,
