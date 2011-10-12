@@ -54,6 +54,8 @@ div.field, div.actions {
   font-size: 12px;
   list-style: square;
 }
+
+/*-------CUSTOM--------*/
 th, td {
     color:green;
     font-size:xx-small;
@@ -62,5 +64,14 @@ th, td {
 
 th {
     color:black;
+}
+p.notice
+{ color:green;
+  background-color: #ccc;
+}
+
+p.alert
+{color:red;
+  background-color: #ccc;
 }
 
