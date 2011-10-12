@@ -10,9 +10,13 @@ class Ability
 
     # Members  
     unless user.new_record?
-      can [:read, :edit, :update], :all
+      can can :read, Text
     end
 
+    # Competitors
+    if user.competitors?
+      can [:read, :edit, :update], :all
+    end
     # Admins
     if user.admin?
       can :manage, :all
