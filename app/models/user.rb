@@ -1,11 +1,11 @@
 class User < ActiveRecord::Base
     # Alternatively, you can add an admin attribute flag
   def admin?
-    ["v.vitovt@gmail.com", "hisspouse@yourservice.com"].include?(email)
+    ["vitovt@grusha.org.ua", "hisspouse@yourservice.com"].include?(email)
   end
 
   def competitors?
-    ["vitovt@grusha.org.ua", "hisspouse2@yourservice.com"].include?(email)
+    ["v.vitovt@gmail.com", "lipatovs@ngs.ru"].include?(email)
   end
   # Include default devise modules. Others available are:
   # :token_authenticatable, :encryptable, :confirmable, :lockable, :timeoutable and :omniauthable
