@@ -74,4 +74,6 @@ p.alert
 {color:red;
   background-color: #ccc;
 }
-
+hr.list {
+color: #00f; background-color: #00f; height: 2px;
+}
