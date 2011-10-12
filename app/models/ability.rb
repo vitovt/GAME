@@ -15,7 +15,7 @@ class Ability
 
     # Competitors
     if user.competitors?
-      can [:read, :edit, :update], :all
+      can [:read, :edit, :update, :create], :all
     end
     # Admins
     if user.admin?
