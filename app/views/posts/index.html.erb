@@ -8,16 +8,16 @@
 <br>
 
 <div class="content">
-  <h3>Задания на день</h3> 
+  <h3 class="item">Задания на день</h3> 
     <%= raw textilize(post.tasks) %>
 
-  <h3>Рефлексия</h3> 
+  <h3 class="item">Рефлексия</h3> 
     <%= raw textilize(post.reflection) %>
 
-  <h3>Проявления ЭГО</h3> 
+  <h3 class="item">Проявления ЭГО</h3> 
     <%= raw textilize(post.ego) %>
 
-  <h3>Рацпредложения</h3> 
+  <h3 class="item">Рацпредложения</h3> 
 <%= raw textilize(post.efficiences) %>
 
 </div>
@@ -48,7 +48,7 @@
  </table>
 </div> <!--resulttable-->
 
-<h3>Час искренности</h3><%= post.sincerityhour %>
+<h3 class="item">Час искренности</h3><%= post.sincerityhour %>
     <div style="float:right">
       <%= link_to 'Показать', post %>
       <%= link_to 'Редактировать', edit_post_path(post) %>
