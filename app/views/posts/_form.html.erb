@@ -69,11 +69,11 @@
   </div>
   <div class="field">
     <strong>Когда проснулся ?</strong>
-    <%= f.time_select :wakeuptime %>
+    <%= f.time_select :wakeuptime, :minute_step => 5 %>
   </div>
   <div class="field">
     <strong>Когда лег спать ?</strong>
-    <%= f.time_select :gosleeptime %>
+    <%= f.time_select :gosleeptime, :minute_step => 5 %>
   </div>
   <div class="field">
     <strong>Час искренности (заполняют другие участники)</strong>
