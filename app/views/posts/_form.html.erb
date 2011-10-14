@@ -18,9 +18,9 @@
   <div class="field">
     <strong>Автор:</strong>
       <%- if @post.new_record? -%>
-        <%= f.text_field :name, :value => current_user.email, :disabled => 'disabled' %> 
+        <%= f.text_field :name, :value => current_user.email, :readonly => 'readonly' %> 
       <%- else %>
-        <%= f.text_field :name, :disabled => 'disabled' %>
+        <%= f.text_field :name, :readonly => 'readonly' %>
       <%- end %>
   </div>
   <div class="field">
