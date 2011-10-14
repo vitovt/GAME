@@ -87,3 +87,5 @@ color: black;
 /* text-decoration:underline;*/
  font-style:italic;
 }
+h2.error
+{color:red}

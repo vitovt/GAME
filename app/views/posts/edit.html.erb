@@ -1,6 +1,11 @@
 <h1>Editing post</h1>
 
+<%if current_user.email == @post.name %>
 <%= render 'form' %>
+<% else %>
+  <h2 class="error">Ошибка: Вы можете редактировать только свои записи!</h2>
+  <br><hr>
+<% end %>
 
-<%= link_to 'Show', @post %> |
-<%= link_to 'Back', posts_path %>
+<%= link_to 'Показать запись', @post %> |
+<%= link_to 'Назад к дневнику', posts_path %>
