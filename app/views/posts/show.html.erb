@@ -74,12 +74,8 @@
 <%= link_to 'Редактировать', edit_post_path(@post) %> |
 <%= link_to 'Назад', posts_path %>
 </div>
-<p>
-  <b>Час искренности:</b>
-  <%= raw textilize(@post.sincerityhour) %>
-</p>
 
-<h2>Час искренности:</h2>
+<h3 class="item">Час искренности:</h3>
 <% @post.comments.each do |comment| %>
   <p>
     <strong>Автор:</strong>
