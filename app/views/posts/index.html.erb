@@ -52,6 +52,10 @@
 </div> <!--resulttable-->
 
 <h3 class="item">Час искренности</h3>
+<% if !post.comments.present? %>
+    <p class="notice">Пока еще нет записей в часе искренности</p>
+<% end %>
+
 <!-- post.sincerityhour -->
 <% post.comments.each do |comment| %>
   <p>
