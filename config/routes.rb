@@ -4,8 +4,9 @@ Game::Application.routes.draw do
   devise_for :users
   devise_for :users do get 'logout' => 'devise/sessions#destroy' end
   resources :texts
-
-  resources :posts
+  resources :posts do
+      resources :comments
+  end
   root :to => "home#index"
   #root:to => "posts#index"
   # The priority is based upon order of creation:

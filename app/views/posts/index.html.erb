@@ -51,7 +51,22 @@
  </table>
 </div> <!--resulttable-->
 
-<h3 class="item">Час искренности</h3><%= post.sincerityhour %>
+<h3 class="item">Час искренности</h3>
+<%= post.sincerityhour %>
+<% post.comments.each do |comment| %>
+  <p>
+    <strong>Автор:</strong>
+    <% user=User.find(comment.commenterid) %>
+    <%= user.username %>
+  </p>
+ 
+  <p>
+    <strong>Отзыв:</strong>
+  <%= raw textilize(comment.body) %>
+  </p>
+<% end %>
+
+
 </div>
     <div style="float:right">
       <%= link_to 'Показать', post %>

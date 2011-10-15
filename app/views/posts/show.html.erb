@@ -78,4 +78,32 @@
   <b>Час искренности:</b>
   <%= raw textilize(@post.sincerityhour) %>
 </p>
+
+<h2>Час искренности:</h2>
+<% @post.comments.each do |comment| %>
+  <p>
+    <strong>Автор:</strong>
+    <% user=User.find(comment.commenterid) %>
+    <%= user.username %>
+  </p>
+ 
+  <p>
+    <strong>Отзыв:</strong>
+  <%= raw textilize(comment.body) %>
+  </p>
+<% end %>
+
+<br />
+<h3>Добавить отзыв в час искренности:</h3>
+<%= form_for([@post, @post.comments.build]) do |f| %>
+  <div class="field">
+    <%= f.text_field :commenterid, :value => current_user.id, :size => '2', :readonly => 'readonly', :hidden => 'hidden'  %>
+  </div>
+  <div class="field">
+    <%= f.text_area :body %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
 <p><a href="/posts">Нажмите здесь, чтобы перейти к дневнику.</a></p>
