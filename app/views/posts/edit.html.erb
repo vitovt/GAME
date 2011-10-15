@@ -1,6 +1,6 @@
 <h1>Editing post</h1>
 
-<%if current_user.email == @post.name %>
+<%if current_user.id == @post.userid %>
 <%= render 'form' %>
 <% else %>
   <h2 class="error">Ошибка: Вы можете редактировать только свои записи!</h2>
