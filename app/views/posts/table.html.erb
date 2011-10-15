@@ -17,7 +17,7 @@
     <th><strong>Edit</strong></th>
   </tr>
 
-<% color= ['ddd', 'ddf', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
+<% color= ['000','fff','ddf', 'ddd', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
   <% @posts.each do |post| %>
    <tr style="background-color:#<%= color[post.userid] %>">
     <td><%= post.publishdate %></td>

@@ -87,6 +87,12 @@ color: black;
 /* text-decoration:underline;*/
  font-style:italic;
 }
+h3.header
+{
+color: blue;
+ text-decoration:underline;
+ font-style:italic;
+}
 h2.error
 {color:red}
 

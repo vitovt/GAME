@@ -1,11 +1,11 @@
 <h1 style="color: blue">Записи дневника соревнований:</h1>
 <hr>
 
-<% color= ['ddd', 'ddf', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
+<% color= ['000','fff','ddf', 'ddd', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
 
 <% @posts.each do |post| %>
 <div  style="background-color:#<%= color[post.userid] %>">
-<h3><%= link_to post.title, post %></h3>
+<h3 class="header"><%= post.title %></h3>
   <strong>Автор:</strong> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
 

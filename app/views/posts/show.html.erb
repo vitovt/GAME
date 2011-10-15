@@ -17,7 +17,7 @@
 
 <p>
   <b>Заголовок:</b>
-  <%= @post.title %>
+  <h3 class="header"><%= @post.title %></h3>
 </p>
 
 <p>
@@ -76,6 +76,9 @@
 </div>
 
 <h3 class="item">Час искренности:</h3>
+<% if !@post.comments.present? %>
+  <p class="notice">Пока еще нет записей в часе искренности</p>
+<% end %>
 <% @post.comments.each do |comment| %>
   <p>
     <strong>Автор:</strong>
@@ -90,7 +93,6 @@
   <%= raw textilize(comment.body) %>
   </p>
 <% end %>
-
 <br />
 <h3>Добавить отзыв в час искренности:</h3>
 <%= form_for([@post, @post.comments.build]) do |f| %>
