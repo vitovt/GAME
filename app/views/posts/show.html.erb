@@ -7,7 +7,7 @@
 
 <p>
   <b>Автор:</b>
-  <span style="color:red">
+  <span class="authorname">
     <% user=User.find(@post.userid) %>
     <%= user.username %>
   </span>
@@ -79,8 +79,10 @@
 <% @post.comments.each do |comment| %>
   <p>
     <strong>Автор:</strong>
-    <% user=User.find(comment.commenterid) %>
-    <%= user.username %>
+    <span class="authorname">
+      <% user=User.find(comment.commenterid) %>
+      <%= user.username %>
+    </span>
   </p>
  
   <p>

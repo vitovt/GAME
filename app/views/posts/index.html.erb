@@ -6,7 +6,7 @@
 <% @posts.each do |post| %>
 <div  style="background-color:#<%= color[post.userid] %>">
 <h3><%= link_to post.title, post %></h3>
-  <strong>Автор:</strong> <span style="color:red"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
+  <strong>Автор:</strong> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
 
 
