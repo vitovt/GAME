@@ -1,10 +1,12 @@
 <h1 style="color: blue">Записи дневника соревнований:</h1>
 <hr>
 
-<% @posts.each do |post| %>
-<h3><%= link_to post.title, post %></h3>
+<% color= ['ddd', 'ddf', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
 
-<strong>Автор:</strong> <span style="color:red"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
+<% @posts.each do |post| %>
+<div  style="background-color:#<%= color[post.userid] %>">
+<h3><%= link_to post.title, post %></h3>
+  <strong>Автор:</strong> <span style="color:red"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
 
 
@@ -50,6 +52,7 @@
 </div> <!--resulttable-->
 
 <h3 class="item">Час искренности</h3><%= post.sincerityhour %>
+</div>
     <div style="float:right">
       <%= link_to 'Показать', post %>
       <%= link_to 'Редактировать', edit_post_path(post) %>
