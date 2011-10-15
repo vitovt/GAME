@@ -28,7 +28,7 @@
   <div style="float:right"><a href="/">Сводная таблица</a>&nbsp;&nbsp;&nbsp;<a href="/texts/1">Правила соревенований</a>&nbsp;&nbsp;&nbsp;</div>
  <div id="user_nav">
   <% if user_signed_in? %>
-    Вы вошли как <%= current_user.email %>. Это не вы?
+    Вы вошли как <strong style="color:blue"><%= current_user.username %></strong>. Это не вы?
     <%= link_to "Выйти", logout_path %>&nbsp;&nbsp;<%= link_to "Редактировать пользователя", edit_user_registration_path %> 
   <% else %>
     <%= link_to "Зарегистрируйтесь", new_user_registration_path %> или <%= link_to "Войдите", new_user_session_path %>
