@@ -1,0 +1,40 @@
+<h2>Results table</h2>
+
+<div class="resulttable">
+ <table border=1>
+  <tr>
+    <th>Дата</th>
+    <th>User</th>
+    <th>Переговоры</th>
+    <th>Правильные перегов.</th>
+    <th>Рацпредложения</th>
+    <th>Внедрен. рацпр.</th>
+    <th>Хронометраж</th>
+    <th>Золотой час</th>
+    <th>Проснулся</th>
+    <th>Лег спать</th>
+    <th><strong>Show</strong></th>
+    <th><strong>Edit</strong></th>
+  </tr>
+
+<% color= ['ddd', 'ddf', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
+  <% @posts.each do |post| %>
+   <tr style="background-color:#<%= color[post.userid] %>">
+    <td><%= post.publishdate %></td>
+    <td> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %> </span></td>
+    <td><%= post.negotiations %></td>
+    <td><%= post.correctnegotiations %></td>
+    <td><%= post.efficiencies %></td>
+    <td><%= post.embeddedefficiencies %></td>
+    <td><%= post.chronometry %></td>
+    <td><%= post.goldhour %></td>
+    <td><%= "#{post.wakeuptime.hour}:#{post.wakeuptime.min}" %></td>
+    <td><%= "#{post.gosleeptime.hour}:#{post.gosleeptime.min}" %> </td>
+    <td><%= link_to 'Show', post %></td>
+    <td><%= link_to 'Edit', edit_post_path(post) %></td>
+  </tr>
+   <% end %>
+  </table>
+</div> <!--resulttable-->
+<br>
+
