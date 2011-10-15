@@ -18,9 +18,13 @@
   <div class="field">
     <strong>Автор:</strong>
       <%- if @post.new_record? -%>
-        <%= f.text_field :name, :value => current_user.email, :readonly => 'readonly' %> 
+        <%= f.text_field :name, :value => current_user.username, :readonly => 'readonly' %> 
+        <strong>UserID</strong>
+        <%= f.text_field :userid, :value => current_user.id, :size => '2', :readonly => 'readonly' %> 
       <%- else %>
         <%= f.text_field :name, :readonly => 'readonly' %>
+        <strong>UserID</strong>
+        <%= f.text_field :userid, :size => '2', :readonly => 'readonly' %>
       <%- end %>
   </div>
   <div class="field">

@@ -4,8 +4,9 @@
 <% @posts.each do |post| %>
 <h3><%= link_to post.title, post %></h3>
 
-<strong>Автор:</strong> <span style="color:red"><%= post.name %></span>, <strong>Дата:</strong> <%= post.publishdate %>
+<strong>Автор:</strong> <span style="color:red"><% user=User.find(@post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
+
 
 <div class="content">
   <h3 class="item">Задания на день</h3> 

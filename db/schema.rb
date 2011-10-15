@@ -10,7 +10,7 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20111015082701) do
+ActiveRecord::Schema.define(:version => 20111015085220) do
 
   create_table "posts", :force => true do |t|
     t.date     "publishdate"
@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(:version => 20111015082701) do
     t.time     "gosleeptime"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.integer  "userid"
   end
 
   create_table "texts", :force => true do |t|
