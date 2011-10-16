@@ -79,10 +79,6 @@
     <strong>Когда лег спать ?</strong>
     <%= f.time_select :gosleeptime, :minute_step => 5, :default => { :hour => 15, :minute => 15 }  %>
   </div>
-  <div class="field">
-    <strong>Час искренности (заполняют другие участники)</strong>
-    <%= f.text_area :sincerityhour %>
-  </div>
   <div class="actions">
     <%= f.submit %>
   </div>
