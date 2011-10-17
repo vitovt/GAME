@@ -1,11 +1,13 @@
 <h1 style="color: blue">Записи дневника соревнований:</h1>
 <hr>
 
-<% color= ['000','fff','ffc','ddf', 'ddd', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
+<% color= ['000','dff','eef','ddf', 'ddd', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
 
-<% @posts.each do |post| %>
+<% @posts.reverse.each do |post| %>
+<br />
+<br />
 <div  style="background-color:#<%= color[post.userid] %>">
-<h3 class="header"><%= post.title %></h3>
+<h3 class="header"><%= post.publishdate %>&nbsp;:&nbsp; <%= post.title %></h3>
   <strong>Автор:</strong> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
 
@@ -71,13 +73,13 @@
 <% end %>
 
 
-</div>
     <div style="float:right">
       <%= link_to 'Показать', post %>
       <%= link_to 'Редактировать', edit_post_path(post) %>
       <%= link_to 'Удалить', post, :confirm => 'Вы уверенны, удаляем ?', :method => :delete %>
     </div>
     <hr class="list">
+</div>
 <% end %>
 
 <br />
