@@ -1,12 +1,10 @@
 <h1 style="color: blue">Записи дневника соревнований:</h1>
 <hr>
 
-<% color= ['000','dff','eef','ddf', 'ddd', 'dfd', 'dff', 'fdd', 'fdf', 'ffd', 'fff'] %>
-
 <% @posts.reverse.each do |post| %>
 <br />
 <br />
-<div  style="background-color:#<%= color[post.userid] %>">
+<div  style="background-color:#<%= Post.color[post.userid] %>">
 <h3 class="header"><%= post.publishdate %>&nbsp;:&nbsp; <%= post.title %></h3>
   <strong>Автор:</strong> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
