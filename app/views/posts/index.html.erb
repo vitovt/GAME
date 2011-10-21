@@ -1,4 +1,7 @@
 <h1 style="color: blue">Записи дневника соревнований:</h1>
+<div style="float:right">
+<%= link_to 'Добавить новую запись', new_post_path %> <a href="/"> Главная </a>
+</div>
 <hr>
 
 <% @posts.reverse.each do |post| %>
@@ -81,6 +84,6 @@
 <% end %>
 
 <br />
-<%= link_to 'Добавить запись', new_post_path %> <a href="/"> Главная </a>
+<%= link_to 'Добавить новую запись', new_post_path %> <a href="/"> Главная </a>
 <br />
 
