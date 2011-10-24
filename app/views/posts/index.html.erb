@@ -7,7 +7,7 @@
 <% @posts.reverse.each do |post| %>
 <br />
 <br />
-<div  style="background-color:#<%= Post.color[post.userid] %>">
+<div  style="color:#<%= Post.color[post.userid] %>">
 <h3 class="header"><%= post.publishdate %>&nbsp;:&nbsp; <%= post.title %></h3>
   <strong>Автор:</strong> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
