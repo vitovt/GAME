@@ -8,7 +8,7 @@
 <br />
 <br />
 <div  style="color:#<%= Post.color[post.userid] %>">
-  <h3 class="header"><%= post.publishdate.wday %> <%= post.publishdate %>&nbsp;:&nbsp; <%= post.title %></h3>
+  <h3 class="header"><%= Post.weekday[post.publishdate.wday] %>, <%= post.publishdate %>&nbsp;:&nbsp; <%= post.title %></h3>
   <strong>Автор:</strong> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %></span>, <strong>Дата:</strong> <%= post.publishdate %>
 <br>
 
