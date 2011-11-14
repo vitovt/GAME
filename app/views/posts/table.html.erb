@@ -18,7 +18,7 @@
   </tr>
 
   <% @posts.each do |post| %>
-   <tr style="background-color:#<%= Post.color[post.userid] %>">
+   <tr style="background-color:#<%= Post.bgcolor[post.userid] %>">
     <td><%= post.publishdate %></td>
     <td> <span class="authorname"><% user=User.find(post.userid) %><%= user.username %> </span></td>
     <td><%= post.negotiations %></td>
