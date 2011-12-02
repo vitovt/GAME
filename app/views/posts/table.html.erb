@@ -25,8 +25,8 @@
     <td><%= post.correctnegotiations %></td>
     <td><%= post.efficiencies %></td>
     <td><%= post.embeddedefficiencies %></td>
-    <td><%= post.chronometry %></td>
-    <td><%= post.goldhour %></td>
+    <td><%= raw post.chronometry? ? '<strong style="color:red">+</strong>' : '<strong style="color:blue">–</strong>' %></td>
+    <td><%= raw post.goldhour? ? '<strong style="color:red">+</strong>' : '<strong style="color:blue">–</strong>' %></td>
     <td><%= "#{post.wakeuptime.hour}:#{post.wakeuptime.min}" %></td>
     <td><%= "#{post.gosleeptime.hour}:#{post.gosleeptime.min}" %> </td>
     <td><%= link_to 'Show', post %></td>
